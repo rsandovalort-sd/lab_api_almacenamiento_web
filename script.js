@@ -45,7 +45,7 @@ document.getElementById("btnSave").addEventListener("click", function(event){
         favoritos = []
     }
 
-    // Hay un cilo para verificar si la clave nombre en la variable local esta en la lista favoritos
+    // Hace un ciclo para verificar si la clave nombre en la variable global esta en la lista favoritos
     let estaFavoritos = false;
     let i = 0;
     while (i < favoritos.length) {
@@ -55,7 +55,7 @@ document.getElementById("btnSave").addEventListener("click", function(event){
         }
         i++;
     }
-    // Aquí comprueba que en el ciclo anterior la condición fue verdadera, arroja una alerta y rompe la función 
+    // Comprueba que en el ciclo anterior la condición fue verdadera, arroja una alerta y rompe la función 
     if (estaFavoritos){
         alert("Este pokemon ya estaba en favoritos")
         return;
@@ -65,7 +65,7 @@ document.getElementById("btnSave").addEventListener("click", function(event){
     favoritos.push(pokemonActual);
     localStorage.setItem("favoritos", JSON.stringify(favoritos));
 
-    // Actualiza y muestra el listado de pokemones en el DOM
+    // Llama a la funcion actualizar para mostrar el listado de pokemones en el DOM
     updateFavoritesList();
 
 });
