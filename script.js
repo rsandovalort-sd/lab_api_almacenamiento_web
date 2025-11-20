@@ -30,8 +30,7 @@ function searchPokemon() {
 document.getElementById("btnSearch").addEventListener("click", searchPokemon);
 
 const lista_pokemones= [];
-const contenedor = document.getElementById("contenedor_favoritos")
-document.getElementById("guardar_pokemon").addEventListener("click", function(event){
+document.getElementById("btnSave").addEventListener("click", function(event){
     event.preventDefault();
     
     if(!pokemonActual){
