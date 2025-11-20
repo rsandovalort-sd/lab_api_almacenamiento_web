@@ -29,7 +29,6 @@ function searchPokemon() {
 
 document.getElementById("btnSearch").addEventListener("click", searchPokemon);
 
-const lista_pokemones= [];
 document.getElementById("btnSave").addEventListener("click", function(event){
     event.preventDefault();
     
