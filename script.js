@@ -37,7 +37,15 @@ document.getElementById("btnSave").addEventListener("click", function(event){
         return;
     }
 
-    let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+    // let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+
+    let contenidoFav = localStorage.getItem("favoritos")
+
+    if (contenidoFav){
+        favoritos = JSON.parse("contenidoFav")
+    }else{
+        favoritos = []
+    }
 
     let estaFavoritos = false;
     let i = 0;
