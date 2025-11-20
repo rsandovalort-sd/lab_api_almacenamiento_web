@@ -30,11 +30,13 @@ document.getElementById("btnSearch").addEventListener("click",function searchPok
 document.getElementById("btnSave").addEventListener("click", function(event){
     event.preventDefault();
     
+    // Verifica si hay capturada información en la variable global
     if(!pokemonActual){
         alert("No se ha escogido pokemon")
         return;
     }
 
+    // Asigna el contenido del localStorage a una variable de tipo lista y si no hay contenido crea la lista vacía
     let contenido_favoritos = localStorage.getItem("favoritos")
 
     if (contenido_favoritos){
@@ -43,6 +45,7 @@ document.getElementById("btnSave").addEventListener("click", function(event){
         favoritos = []
     }
 
+    // Hay un cilo para verificar si la clave nombre en la variable local esta en la lista favoritos
     let estaFavoritos = false;
     let i = 0;
     while (i < favoritos.length) {
@@ -52,14 +55,17 @@ document.getElementById("btnSave").addEventListener("click", function(event){
         }
         i++;
     }
-    
+    // Aquí comprueba que en el ciclo anterior la condición fue verdadera, arroja una alerta y rompe la función 
     if (estaFavoritos){
         alert("Este pokemon ya estaba en favoritos")
         return;
     }
+    // Si en el if anterior da falso, no estaba el nombre del pokemon en la lista, lo agrega a la lista y la convierte en una cadena JSON
+    // Y guarda esa info en el localStorage
     favoritos.push(pokemonActual);
     localStorage.setItem("favoritos", JSON.stringify(favoritos));
 
+    // Actualiza y muestra el listado de pokemones en el DOM
     updateFavoritesList();
 
 });
