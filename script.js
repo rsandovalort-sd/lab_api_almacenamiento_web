@@ -55,6 +55,8 @@ document.getElementById("btnSave").addEventListener("click", function(event){
     favoritos.push(pokemonActual);
     localStorage.setItem("favoritos", JSON.stringify(favoritos));
 
+    updateFavoritesList();
+
 });
 
     
