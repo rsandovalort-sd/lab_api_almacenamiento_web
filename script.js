@@ -77,3 +77,15 @@ function updateFavoritesList()
 }
 
 updateFavoritesList();
+
+function deleteFavorites() {
+    localStorage.removeItem("favoritos");
+
+    document.getElementById("favorite").innerHTML = "";
+
+    document.getElementById("result").innerHTML = "";
+
+    alert("Favoritos eliminados");
+}
+
+document.getElementById("btnDelete").addEventListener("click", deleteFavorites);

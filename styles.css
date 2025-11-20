@@ -42,6 +42,10 @@ button {
     margin-bottom: 20px;
 }
 
+#btnDelete {
+    background-color: #e03e3e;
+    color: white;
+}
 
 #btnSearch {
     background-color: #ffcb05;
