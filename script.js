@@ -38,7 +38,8 @@ document.getElementById("btnSave").addEventListener("click", function(event){
     let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
 
     let estaFavoritos = false;
-    for (let i = 0; i < favoritos.length; i++) {
+    let i = 0;
+    while (i < favoritos.length) {
         if (favoritos[i].nombre === pokemonActual.nombre) {
             estaFavoritos = true;
             break
