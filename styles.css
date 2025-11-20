@@ -1,0 +1,129 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #74ebd5, #acb6e5);
+    min-height: 100vh;
+    padding: 30px;
+    color: #333;
+}
+
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+}
+
+#btnRequest {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+
+#btnSearch {
+    background-color: #ffcb05;
+    color: #2a75bb;
+}
+
+#btnSearch:hover {
+    background-color: #f5b700;
+}
+
+#btnSave {
+    background-color: #2a75bb;
+    color: #fff;
+}
+
+#btnSave:hover {
+    background-color: #1f5c8a;
+}
+
+
+#result, #favorite {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+
+.pokemon-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    width: 120px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.pokemon-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+}
+
+.pokemon-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.pokemon-card span {
+    font-weight: bold;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.pokemon-card button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #ff4c4c;
+    color: #fff;
+    padding: 4px 6px;
+    border-radius: 8px;
+    font-size: 12px;
+    display: none;
+}
+
+.pokemon-card:hover button {
+    display: block;
+}
+
+.pokemon-card button:hover {
+    background-color: #e03e3e;
+}
+
+
+@media (max-width: 500px) {
+    .pokemon-card {
+        width: 45%;
+    }
+}
