@@ -34,7 +34,7 @@ const contenedor = document.getElementById("contenedor_favoritos")
 document.getElementById("guardar_pokemon").addEventListener("click", function(event){
     event.preventDefault();
     
-    if(!pokemon_actual){
+    if(!pokemonActual){
         alert("No se ha escogido pokemon")
         return;
     }
@@ -43,7 +43,7 @@ document.getElementById("guardar_pokemon").addEventListener("click", function(ev
 
     let estaFavoritos = false;
     for (let i = 0; i < favoritos.length; i++) {
-        if (favoritos[i].name === pokemon_actual.name) {
+        if (favoritos[i].nombre === pokemonActual.nombre) {
             estaFavoritos = true;
             break
         }
@@ -53,10 +53,9 @@ document.getElementById("guardar_pokemon").addEventListener("click", function(ev
         alert("Este pokemon ya estaba en favoritos")
         return;
     }
-    favoritos.push(pokemon_actual);
+    favoritos.push(pokemonActual);
     localStorage.setItem("favoritos", JSON.stringify(favoritos));
 
-    actualizarFAvoritos();
 });
 
     
