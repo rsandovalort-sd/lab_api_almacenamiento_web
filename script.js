@@ -1,6 +1,6 @@
 let pokemonActual = null;
 
-function searchPokemon() {
+document.getElementById("btnSearch").addEventListener("click",function searchPokemon() {
     // 1. Obtener nombre del input
     const nombre = document.getElementById("btnRequest").value.toLowerCase();
     const url = `https://pokeapi.co/api/v2/pokemon/${nombre}`;
@@ -25,9 +25,7 @@ function searchPokemon() {
         .catch(err => {
             alert("Pokémon no encontrado");
         });
-};
-
-document.getElementById("btnSearch").addEventListener("click", searchPokemon);
+});
 
 document.getElementById("btnSave").addEventListener("click", function(event){
     event.preventDefault();
@@ -78,14 +76,14 @@ function updateFavoritesList()
 
 updateFavoritesList();
 
-function deleteFavorites() {
+document.getElementById("btnDelete").addEventListener("click",function deleteFavorites() {
     localStorage.removeItem("favoritos");
 
     document.getElementById("favorite").innerHTML = "";
 
     document.getElementById("result").innerHTML = "";
 
-    alert("Favoritos eliminados");
-}
+    document.getElementById("btnRequest").value = "";
 
-document.getElementById("btnDelete").addEventListener("click", deleteFavorites);
+    alert("Pokemones Favoritos eliminados");
+});
