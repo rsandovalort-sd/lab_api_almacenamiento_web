@@ -35,10 +35,10 @@ document.getElementById("btnSave").addEventListener("click", function(event){
         return;
     }
 
-    let contenidoFavo = localStorage.getItem("favoritos")
+    let contenido_favoritos = localStorage.getItem("favoritos")
 
-    if (contenidoFavo){
-        favoritos = JSON.parse("contenidoFav")
+    if (contenido_favoritos){
+        favoritos = JSON.parse(contenido_favoritos)
     }else{
         favoritos = []
     }
@@ -50,6 +50,7 @@ document.getElementById("btnSave").addEventListener("click", function(event){
             estaFavoritos = true;
             break
         }
+        i++;
     }
     
     if (estaFavoritos){
