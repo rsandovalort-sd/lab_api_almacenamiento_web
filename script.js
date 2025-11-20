@@ -58,7 +58,22 @@ document.getElementById("btnSave").addEventListener("click", function(event){
 
 });
 
-    
+function updateFavoritesList() 
+{
+    let favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+    const favoritoDiv = document.getElementById("favorite");
+    favoritoDiv.innerHTML = "";
 
+    for (let i = 0; i < favoritos.length; i++) 
+    {
+        const pokemonDiv = document.createElement("div");
+        pokemonDiv.innerHTML = `
+            <h3>${favoritos[i].nombre}</h3>
+            <img src="${favoritos[i].imagen}" alt="${favoritos[i].nombre}">
+        `;
+        
+        favoritoDiv.appendChild(pokemonDiv);
+    }
+}
 
-
+updateFavoritesList();
